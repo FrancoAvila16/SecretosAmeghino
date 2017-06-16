@@ -1,2 +1,12 @@
 Usuario: secretadmin
 Password: pican3
+
+Paso para bajar de git: 
+git clone https://github.com/FrancoAvila16/SecretosAmeghino.git
+
+Pasos para subir a git: 
+git status 
+git add --all 
+git commit -m "nombre"
+git push origin master
+

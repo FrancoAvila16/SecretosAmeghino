@@ -1,5 +1,5 @@
 h1 a {
-        color: #FCA205;
+        color: #ffffff;
     }
     
 body {
@@ -7,7 +7,7 @@ body {
     }
     
 h1 a {
-        color: #FCA205;
+        color: #ffffff;
         font-family: 'Lobster';
     }
     
@@ -24,16 +24,21 @@ h1 a {
     }
 
     .content {
-        margin-left: 40px;
+        margin-left: 30px;
+        color: #black;
+        font-size: 14pt;
+        font-family: 'Lobster', cursive, bold;
     }
 
     h1, h2, h3, h4 {
         font-family: 'Lobster', cursive;
+        color: #0B6121;
     }
 
     .date {
         float: right;
-        color: #828282;
+        color: #298A08;
+        font-family: 'Lobster', cursive,bold;
     }
 
     .save {

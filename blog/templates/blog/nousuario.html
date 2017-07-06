@@ -12,17 +12,30 @@
         <div class="page-header">
             <a href="{% url 'blog.views.ingresar' %}" class="top-menu" ><span class="btn btn-success">Ingresar</span></a>
             <a href="{% url 'blog.views.nuevo_usuario' %}" class="top-menu" ><span class="btn btn-success"> Registrarse</span></a>
-            <a href="{% url 'blog.views.privado' %}" class="btn btn-success" class="top-menu" ><span class="glyphicon glyphicon-user"></span></a>
-            <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><center>Secretos ameghino<img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
+              {% block content %} 
+
+
+
+    <h1>Error de usuario</h1>
+
+
+    
+    
+        <p>El usuario y la contraseña no coinciden o no existen</p>
+    
+{% endblock %}
                 </div>
             </div>
         </div>
     </body>
     </html>
+
+
+
+
+

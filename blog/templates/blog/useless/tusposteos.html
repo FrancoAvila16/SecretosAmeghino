@@ -1,3 +1,5 @@
+
+
 {% load staticfiles %}
     <html>
         <head>
@@ -11,24 +13,46 @@
         <body style="background-color:lightgreen;">
         <div class="page-header">
             <a href="{% url 'blog.views.privado' %}" class="btn btn-success" class="top-menu" ><span class="glyphicon glyphicon-user"></span></a>
-            <a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>
-			<a href="{% url 'blog.views.cerrar' %}" class="top-menu" ><span class="btn btn-success">Cerrar sesion</span></a>
-            <h1><center><a href="{% url 'blog.views.post_list' %}">Secretos ameghino</a><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
+            <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><center><a href="/">Secretos ameghino</a><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                  {% block content %}
-        <h1>Nueva publicacion</h1>
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-success">Publicar</button>
-        </form>
-    {% endblock %}
+                 
+                 {% block content %}
+        {% for post in posts %}
+            <div class="post">
+                <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}" >{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+                
+        
+            </div>
+        {% endfor %}
+    {% endblock content %}
                 </div>
             </div>
         </div>
     </body>
     </html>
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

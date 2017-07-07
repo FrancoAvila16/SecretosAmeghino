@@ -1,0 +1,9 @@
+Cosas a realizar:
+-Sistema de votos.
+-Mas detalles de usuario al registrarse.
+-Redireccionar a los post mas votados sea semanales o mensuales.
+-Poder agregar contenido(videos, imagenes).------Cuestiones legales.
+-Comentar post.
+-No poder ver la lista de post hasta que alguien ingrese como usuario.
+-Chatear https://www.youtube.com/watch?v=Z8Gjm858CWg.
+-Clasificar contenido.

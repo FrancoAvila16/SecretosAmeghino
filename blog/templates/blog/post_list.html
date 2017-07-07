@@ -16,7 +16,14 @@
 			<a href="{% url 'blog.views.post_list_mejores_semanales' %}" class="top-menu" ><span class="btn btn-primary">Mejores semanales</span></a>
 			<a href="{% url 'blog.views.post_list_mejores_mensuales' %}" class="top-menu" ><span class="btn btn-primary">Mejores mensuales</span></a>
             <h1><center><a>Secretos ameghino</a><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
+</div>
+<div align="right">
+				<a href="{% url 'blog.views.post_list_mejores_semanales' %}" class="bottom-menu" ><span class="btn btn-primary">Posteos sobre profesores</span></a>
+			<a href="{% url 'blog.views.post_list_mejores_mensuales' %}" class="bottom-menu" ><span class="btn btn-primary">Posteos sobre alumnos</span></a>
+       
+			<a href="{% url 'blog.views.post_list_mejores_mensuales' %}" class="bottom-menu" ><span class="btn btn-primary">Posteos sobre otros</span></a>
         </div>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -27,8 +34,8 @@
                 <div class="date">
                     {{ post.published_date }}
                 </div>
-                <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}" >{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
+                <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}" >{{ post.titulo }}</a></h1>
+                <p>{{ post.texto|linebreaksbr }}</p>
                 
             <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span></a>
             <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> </a>

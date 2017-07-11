@@ -1,5 +1,5 @@
 Cosas a realizar:
--Sistema de votos.
+-Sistema de votos.https://medium.com/tixdo-labs/vote-your-model-with-no-pain-9d7670b65bfd
 -Mas detalles de usuario al registrarse.
 -Redireccionar a los post mas votados sea semanales o mensuales.
 -Poder agregar contenido(videos, imagenes).------Cuestiones legales.

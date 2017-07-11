@@ -14,6 +14,22 @@ def post_list(request):
     posts = Post.objects.all
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+
+
+def post_list_alumnos(request):
+    posts = Post.objects.all().filter(chismes_de="Alumno")
+    return render(request, 'blog/alumnos.html', {'posts': posts})
+
+def post_list_profesores(request):
+    posts = Post.objects.all().filter(chismes_de="Profesor")
+    return render(request, 'blog/profesores.html', {'posts': posts})
+
+def post_list_otros(request):
+    posts = Post.objects.all().filter(chismes_de="Otros")
+    return render(request, 'blog/otros.html', {'posts': posts})
+
+
+
 def post_list_privado(request):
     posts = Post.objects.filter(author=request.user)
     return render(request, 'blog/post_list_privado.html', {'posts': posts})
@@ -107,5 +123,7 @@ def cerrar (request):
 def post_detail_privado(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail_privado.html', {'post': post})
+
+
 
 

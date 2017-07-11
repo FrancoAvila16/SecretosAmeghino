@@ -1,14 +1,17 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+from votes.managers import VotableManager
 
 class Post(models.Model):
 	author = models.ForeignKey('auth.User')
 	titulo = models.CharField(max_length=200)
 	texto = models.TextField()
+	votes = VotableManager()
 	chismes_de = models.CharField(
-		max_length=1,
-		choices=(('A','Alumno'), ('P', 'Profesor'), ('O', 'Otros')),
-		default='A',
+		max_length=20,
+		choices=(('Alumno','Alumno'), ('Profesor', 'Profesor'), ('Otros', 'Otros')),
+		default='Alumno',
 	)
 	created_date = models.DateTimeField(
 		default=timezone.now)	
@@ -21,5 +24,7 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.titulo
-		
 
+
+
+		

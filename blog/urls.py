@@ -2,7 +2,6 @@ from django.conf.urls import include, url
 from . import views
 from votes import urls
 
-
 urlpatterns = [
         url(r'^$', views.ingresar),
 		url(r'^privado/post_list$', views.post_list, name='listado'),

@@ -2,14 +2,18 @@ from django.shortcuts import render,redirect
 from django.utils import timezone
 from .models import Post
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, render_to_response
+from django.shortcuts import render, render_to_response, get_object_or_404
 from .forms import PostForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+from django.views.defaults import page_not_found
 
+
+
+@login_required(login_url='/ingresar')
 def post_list(request):
     posts = Post.objects.all
     return render(request, 'blog/post_list.html', {'posts': posts})

@@ -7,11 +7,18 @@
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
             <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
         </head>
         <body style="background-color:lightgreen;">
         <div class="page-header">
             <a href="{% url 'blog.views.nuevo_usuario' %}" class="top-menu" ><span class="btn btn-success"> Registrarse</span></a>
             <h1><center>Secretos ameghino<img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
+            <h2 style="color:white"><center>Inicio de sesion</center> </h2>
         </div>
         <div class="content container">
             <div class="row">
@@ -23,9 +30,10 @@
     <h1>Iniciar sesion</h1>
 
 
+
     <form id='form' method='post' action=''>{% csrf_token %} 
         <table>{{form}}</table>
-        <p><input type='submit' value='Ingresar' class="btn btn-success" /></p>
+        <p><input type='submit' value='Ingresar' class="btn btn-success" ></p>
 
     </form>
 {% endblock %}

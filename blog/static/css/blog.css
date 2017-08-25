@@ -1,15 +1,8 @@
-h1 a {
-        color: #ffffff;
-    }
-    
+
 body {
         padding-left: 15px;
     }
     
-h1 a {
-        color: #ffffff;
-        font-family: 'Lobster';
-    }
     
  .page-header {
         background-color:#298A08;
@@ -23,23 +16,28 @@ h1 a {
         text-decoration: none;
     }
 
-    .content {
-        margin-left: 30px;
-        color: #black;
-        font-size: 14pt;
-        font-family: 'Lobster', cursive, bold;
+
+
+ .caca {
+        margin-left: 20px;
+        margin-right: -400px;
+        font-family: 'Varela Round', sans-serif;
+
     }
 
-    h1, h2, h3, h4 {
-        font-family: 'Lobster', cursive;
-        color: #0B6121;
+    .content {
+        margin-left: 32px;
+        color: black;
+        font-size: 13pt;
+        font-family: 'Varela Round', sans-serif;
     }
+
+
 
     .date {
-        float: right;
-        color: #298A08;
-        font-family: 'Lobster', cursive,bold;
-        font-size: 12pt;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 10pt;
+        color: green;
     }
 
     .save {
@@ -64,3 +62,29 @@ h1 a {
     .post h1 a, .post h1 a:visited {
         color: #000000;
     }
+
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+
+
+.footer {
+    position: relative;
+    height: 40px;
+    padding: 5px 0px;
+    clear: both;
+    background: #ff9400;
+    text-align: center;
+    color: #fff;
+}
+
+.connect {
+    margin-top: -25px;
+    height: 40px;
+    padding-top: 22px;
+    clear: both;
+    background: #ff9400;
+    text-align: center;
+}

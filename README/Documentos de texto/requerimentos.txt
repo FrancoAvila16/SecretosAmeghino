@@ -1,12 +1,12 @@
 El sistema tiene que:
--Dar aviso de terminos y condiciones al momento de registro.
--Registrar usuarios con (Nombre, apellido, curso, email, nombre de usuario).
+*Dar aviso de terminos y condiciones al momento de registro.
+*Registrar usuarios con (Nombre, apellido, curso, email, nombre de usuario).
 -Permitir al usuario subir contenido(imagenes, texto, videos).
 -Clasificar el contenido por los usuarios sea por: curso, imagenes, videos, o texto y si es referido a alumnos o profesores. 
 -Antes de subir dicho contenido debe ser admistrado, certificado y confirmado por los moderadores.
 -Tener un sistema de votos a favor(la cual sera usada para destacar las 10 mejor publicaciones semanales y mensuales), permitir comentarios. 
 -Permitir la comunicacion entre distintos usuarios mediante chat.
--Tener un perfil de cada usuario lo cual indique: cantidad de posteos(aportes). Su identidad puede aparecer anonima o no.
+*Tener un perfil de cada usuario lo cual indique: cantidad de posteos(aportes). Su identidad puede aparecer anonima o no.
 
 Idea: 
 Crear un blog por y para los alumnos Florentino Ameghino, donde los usuarios registrados(anonimos o visibles)puedan subir contenido(previamente aprobado y certificado por los moderadores), el contenido podra ser comentado, visto y votado positivamente, las publicaciones mas votadas apareceran en destacadas semanales y mensuales, cada usuario contara con un perfil donde apareceran lo que posteo, sus aportes y contacto a preferencia. Los usuarios podran chatear entre si.

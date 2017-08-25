@@ -1,0 +1,90 @@
+{% load staticfiles %}
+    <html>
+        <head>
+             <link rel="icon" href="https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png" type="image/gif" sizes="16x16"> 
+            <title>Secretos ameghino</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+            <meta http-equiv="refresh" content="30">
+        </head>
+        <body style="background-color:lightgreen;">
+        <div class="page-header">
+         
+            <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url 'blog.views.privado' %}" class="btn btn-success" class="top-menu" ><span class="glyphicon glyphicon-user"></span></a>    
+            <a href="{% url 'blog.views.post_document' %}" class="btn btn-success"><span class="glyphicon glyphicon-picture"></span></a>
+            <a href="{% url 'blog.views.cerrar' %}" class="top-menu" ><span class="btn btn-success">Cerrar sesion</span></a>
+            <a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>  
+
+            <h1><center><a>Chat grupal</a><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
+            <h2 style="color:white"><center>Chat grupal</center></h2>
+            <br>
+
+</div>
+
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+  <div id="chat-body" class="caca" style="background-color:green">
+        <div id="msg-list-div" class="panel-body">
+            <ul id="msg-list" class="list-group">
+                {% for obj in chat %}
+                    {% if obj.user == request.user %}
+                        <p>{{usuario.username}}</p>
+                        <li class="text-right list-group-item" style="background-color:lightgreen">
+                        <p>{{ obj.message }}</p>
+                        <div class="date">
+                        <p>{{ obj.created }}</p>
+                        </div>
+                        </li>
+                    {% else %}
+                        <p>
+                        <li class="text-left list-group-item" style="color:black">
+                        <p style="color:grey">{{ obj.user }}:</p> 
+                        <p>{{ obj.message }}</p>
+                        <div class="date">
+                        <p>{{ obj.created }}</p>
+                        </div>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li class="text-right list-group-item">Sin mensajes</li>
+                {% endfor %}
+                <script>
+                    var chatlist = document.getElementById('msg-list-div');
+                    chatlist.scrollTop = chatlist.scrollHeight;
+                </script>
+            </ul>
+        </div>
+
+    <form id="chat-form" method="post" action="/post/" >
+        <div id="chat-bottom" class="input-group">
+            <input type="text" id="chat-msg" name="chat-msg" class="form-control"/>
+            <span class="input-group-btn">
+                <input class="btn btn-success" id="Enviar" type="submit" value="Enviar"/>
+            </span>
+        </div>
+    </form>
+</body>
+
+<script src="{% static 'chat.js' %}"></script>
+
+
+                </div>
+            </div>
+        </div>
+
+    </html>
+
+
+

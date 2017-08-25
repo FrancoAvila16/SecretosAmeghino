@@ -1,0 +1,33 @@
+{% load staticfiles %}
+    <html>
+        <head>
+             <link rel="icon" href="https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png" type="image/gif" sizes="16x16"> 
+            <title>Secretos ameghino</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        </head>
+        <body style="background-color:lightgreen;">
+        <div class="page-header">
+            <a href="{% url 'blog.views.ingresar' %}" class="top-menu" ><span class="btn btn-success">Ingresar</span></a>
+            <a href="{% url 'blog.views.nuevo_usuario' %}" class="top-menu" ><span class="btn btn-success"> Registrarse</span></a>
+            <br>
+            <h1 align="center">Secretos ameghino<img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></h1>
+            <h2 style="color:white"><center> Error de solicitud</center></h2>
+        </div>
+        <br>
+            <h1 align="center" style="color:red">Errores:</h1>
+            <h1 align="center" style="color:red">Las contraseñas no coinciden</h1>
+            <h1 align="center" style="color:red">Datos erroneos</h1>
+            <h1 align="center" style="color:red">Nombre de usuario no disponible</h1>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>

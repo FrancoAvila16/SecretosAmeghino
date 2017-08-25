@@ -7,29 +7,45 @@
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
             <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+            <meta http-equiv="refresh" content="30"> 
         </head>
         <body style="background-color:lightgreen;">
         <div class="page-header">
-            <a href="{% url 'blog.views.privado' %}" class="btn btn-success" class="top-menu" ><span class="glyphicon glyphicon-user"></span></a>
+        
             <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
-			<a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>
-			<a href="{% url 'blog.views.cerrar' %}" class="top-menu" ><span class="btn btn-success">Cerrar sesion</span></a>
+            <a href="{% url 'blog.views.privado' %}" class="btn btn-success" class="top-menu" ><span class="glyphicon glyphicon-user"></span></a>    
+            <a href="{% url 'blog.views.post_document' %}" class="btn btn-success"><span class="glyphicon glyphicon-picture"></span></a>
+            <a href="{% url 'blog.views.cerrar' %}" class="top-menu" ><span class="btn btn-success">Cerrar sesion</span></a>
+            <a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>  
+            <a href="{% url 'blog.views.Chat_grupal' %}" class="btn btn-success" class="top-menu"><span class="glyphicon glyphicon-comment"></span></a>
+
             <h1><center><a>{{ post.titulo }}</a><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></center>  </h1>
+            <h2 style="color:white"><center>Detalles de tu post</center> </h2>
+
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
               
     {% block content %}
-        <div class="date">
+    <div class="contenido">
+        <h1>{{ post.titulo }}</h1>
+        <p>{{ post.texto|linebreaksbr }}</p>
+         <div class="date">
         {% if post.published_date %}
             {{ post.published_date }}
         {% endif %}
          <a class="btn btn-success" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        
-        </div>
-        <h1>{{ post.titulo }}</h1>
-        <p>{{ post.texto|linebreaksbr }}</p>
+          {% empty %}
+    <p>No posteaste nada</p>
+        {% endfor %}
+
     {% endblock %}
                 </div>
             </div>

@@ -2,26 +2,36 @@
     <html>
         <head>
              <link rel="icon" href="https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png" type="image/gif" sizes="16x16"> 
-            <title>Secretos ameghino</title>
+             <title>Secretos ameghino</title>
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
             <link rel="stylesheet" href="{% static 'css/blog.css' %}">
             <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet"> 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <link href="https://fonts.googleapis.com/css?family" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"> 
         </head>
         <body style="background-color:lightgreen;">
         <div class="page-header">
-            <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>
-            <a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>
+        
+            <a href="{% url 'blog.views.post_new' %}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></a>  
+            <a href="{% url 'blog.views.post_document' %}" class="btn btn-success"><span class="glyphicon glyphicon-picture"></span></a>
             <a href="{% url 'blog.views.cerrar' %}" class="top-menu" ><span class="btn btn-success">Cerrar sesion</span></a>
+            <a href="{% url 'blog.views.post_list' %}" class="btn btn-success"><span><img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="15" width="15"></span></a>  
+            <a href="{% url 'blog.views.Chat_grupal' %}" class="btn btn-success" class="top-menu"><span class="glyphicon glyphicon-comment"></span></a>
+
             <a href="{% url 'blog.views.post_list_privado' %}" class="top-menu" ><span class="btn btn-success">Tus posteos</span>
             <h1><center><a>Tu perfil<img src="http://aow.triumph.net/wp-content/uploads/2014/03/incognito.png" alt="logo secretos" height="42" width="42"></a></center></h1>
-            <h2 style="color:white"><center>Bienvenido {{usuario.username}}</center></h2>
+            <h2 style="color:white"><center>Bienvenido <b><i>{{usuario.username}}</i></b></center></h2>
         </div>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                <h1>Bienvenido</h1>
-                <p>Bienvenido <b style="color:green">{{usuario.username}}</b>, eres miembro desde el {{usuario.date_joined}}</p>
+                <h1 style="color:green">Bienvenido</h1>
+                <p>Bienvenido <b style="color:green">{{usuario.username}}</b>, eres miembro desde el {{usuario.date_joined}}.</p>
 				<p>Para ver todos los post pulsa el boton de incognito en el borde superior izquierdo.</p>                
 				<p>Para añadir tu post pulsa el "+" ubicado en el borde superior izquierdo.</p>
 				<p>Todo lo que postees se mantendra de forma anonima.</p>
